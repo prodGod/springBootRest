@@ -1,0 +1,119 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.springframework.org/security/tags">
+<html lang="en">
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Форма входа</title>
+</head>
+<body>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container-fluid col-sm-8 mx-auto">
+
+    <form method="POST" th:action="@{/login}">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-6 col-md-4 row">
+
+                <br/>
+                <br/>
+                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+                <div>
+                    <input name="login" type="text" size="30" class=" form-control" placeholder="Login" autofocus/>
+                    <input name="password" class="form-control" size="30" type="password" placeholder="Password"/>
+                </div>
+                <br>
+                <div>
+                    <button type="submit" class="w-100 btn btn-lg btn-primary">Accept</button>
+                </div>
+                <br>
+                <div>
+                    <button type="button" class="w-100 btn btn-lg btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#registrationModal">Sing in
+                    </button>
+                </div>
+
+
+                <h5 align="center" style="color: red" th:type="text" th:utext="${message}"></h5>
+
+            </div>
+        </div>
+    </form>
+
+    <form id="Registration_Form">
+        <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body" align="center">
+                        <div class="col-8">
+                            <input class="form-control" type="text" id="login"
+                                   placeholder="Login" autofocus>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" id="name" placeholder="Name" autofocus>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" id="surname" placeholder="Surname"
+                                   autofocus>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="number" id="age" placeholder="Age" autofocus>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="email" id="email" placeholder="E-mail">
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="password" id="password"
+                                   placeholder="Password">
+                        </div>
+                        <br>
+                        <button class="btn btn-primary col-6 RegisterButton" type="submit">Register now</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="/js/public/login.js" type="text/javascript"></script>
+
+</body>
+</html>
